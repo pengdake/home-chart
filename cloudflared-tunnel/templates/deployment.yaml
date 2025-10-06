@@ -24,29 +24,12 @@ spec:
         - name: {{ .Values.pod.name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          # 使用 /bin/sh -c 读取挂载的 token 文件并启动 tunnel
           command:
-            - /bin/sh
-            - -c
-            - >
-              tunnel --no-autoupdate run --token "$(cat /etc/cloudflared/token)" {{- if .Values.extraArgs }} {{ join " " .Values.extraArgs }}{{- end }}
-          volumeMounts:
-            - name: token-volume
-              mountPath: /etc/cloudflared
-              readOnly: true
+            - cloudflared
+            - tunnel
+            - --no-autoupdate
+            - run
+            - --token
+            - {{ .Values.token | quote }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
-      volumes:
-        - name: token-volume
-{{- if .Values.token }}
-          secret:
-            secretName: {{ include "cloudflared-tunnel.fullname" . }}-token
-            items:
-              - key: token
-                path: token
-{{- else }}
-          # 如果 values.token 为空，期待用户手动创建名为 <release>-cloudflared-tunnel-token 的 Secret
-          secret:
-            secretName: {{ include "cloudflared-tunnel.fullname" . }}-token
-            optional: false
-{{- end }}
