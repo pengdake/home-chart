@@ -1,0 +1,26 @@
+# 默认 values（把敏感 token 通过 --set token="..." 或者把 values.yaml 放到本地但请注意安全）
+replicaCount: 1
+
+image:
+  repository: cloudflare/cloudflared
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Kubernetes 命名空间（部署时可覆盖）
+pod:
+  name: cloudflared-tunnel
+  serviceAccountName: ""
+
+# token: 将用于创建 Secret（请不要把真实 token 上传到公共仓库）
+token: ""
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+securityContext: {}
+containerSecurityContext: {}
+
+# 如果想把额外的 args 传进去，可以修改 commandTemplate 和 extraArgs
+extraArgs: []
