@@ -30,7 +30,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: cloudflared-token
-                  key: TUNNEL_TOKEN
+                  key: token
           command:
             - cloudflared
             - tunnel
