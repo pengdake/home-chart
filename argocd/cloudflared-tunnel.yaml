@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudflared-tunnel
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/cloudflared-tunnel      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: cloudflared-tunnel
+      parameters:
+        - name: replicaCount
+          value: "1"
+        - name: image.tag
+          value: "latest"
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cloudflared-tunnel.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: {{ include "cloudflared-tunnel.name" . }}
     helm.sh/chart: {{ include "cloudflared-tunnel.chart" . }}
@@ -24,12 +25,16 @@ spec:
         - name: {{ .Values.pod.name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: TUNNEL_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: cloudflared-token
+                  key: TUNNEL_TOKEN
           command:
             - cloudflared
             - tunnel
             - --no-autoupdate
             - run
-            - --token
-            - {{ .Values.token | quote }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}

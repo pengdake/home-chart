@@ -1,0 +1,25 @@
+replicaCount: 1
+
+image:
+  repository: cloudflare/cloudflared
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Kubernetes 命名空间（部署时可覆盖）
+pod:
+  name: cloudflared-tunnel
+  serviceAccountName: ""
+
+secretName: cloudflared-token
+encryptedToken: AgA/nY9KGOerIraEyr1cLHN3GJFOB1aXzjYR3Rp3OE/VwF8+ROkbC0HXC1HiVExpkNQ20CeJWIsJTa1qkT7HJ7+++zBG2vDKUh1E44cYdNMIrn2ShXyTn85pTxMIiHE4n4BtjrSK4MHob43EIMrruUbP+tiZ2/N9f/2SCKNDQjegTDMSyURmkRP8dIMVhQhrSFDNU5zWO3kyV4RguF8O/kjn68jXl33d6K2Slpj2V8XGrU7ZTg07un6oH0xUYUW/84CDUz8da7vvltGdZoenvf0xmDZ2nLBj4P34uEJL5ytWuJWusf6wluIZglKpPBCKuScFTOYcY1bS4kfmoHzEX1MbwzmDC1cb1le5iukFjcdXw5938TsHh8666pyO0FNBJCctX4vHKCe18v+JqEu+6q+T4YGUEc8g5xeGyMZnpU/zTrfg5NXFcq9Hv8WGx3ncm7H/7i6w9N7c6upMtEbc8YJjV88swmhJNdEjGTAusFheAZ26RiFzw06O8f4Un+X7Mqsm21hPJiy67NKMryhB2xGX3KKR8QLPkqlSfvIlHeHmVpoWoe09JoiICqJtTsc7p7YUU9kafUt5oeGrZ6rcX+6AIuWjJ3Zkjfq1WSKD/Z8dcmpHWP3hjTuc/Ye5oeETd+ccsSXhYP+YwYRDiXSkQpiJBnR8/HohqmQhfWiqrHwGUewRpj4yoRRIl51CTj50o2JqpQx5WwD8uT7PTZXa/cnWvumEwg+lRNrRlvzRk6AdUpLuJNmfg+XCnIZGaeSoxDmfFoIuSo1tZBuWcHY3SQUbnlMZpQEpa8cptrI7gE5rzY3XTCZOFpxl1fcVboJIdwy8mF5m5TmuIs7VHZTtzDLnMBg7+4gg25vcYaK3/VoXYtRy9FQ9BN0NrfUzFbyQKGoGSHbR4cbgCHLlqxrfiEEXxnaKt0KLc8R/greMcLxj1PrKfoWxEw6f
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+securityContext: {}
+containerSecurityContext: {}
+
+# 如果想把额外的 args 传进去，可以修改 commandTemplate 和 extraArgs
+extraArgs: []
