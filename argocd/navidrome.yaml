@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cloudflared-tunnel
+  name: navidrome
   namespace: argocd    # 必须是 argocd 命名空间
 spec:
   project: default
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main
-    path: charts/cloudflared-tunnel      # 指向你自定义 Helm Chart 的路径
+    path: charts/navidrome      # 指向你自定义 Helm Chart 的路径
     helm:
-      releaseName: cloudflared-tunnel
+      releaseName: navidrome
       parameters:
         - name: replicaCount
           value: "1"

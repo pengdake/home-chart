@@ -1,0 +1,16 @@
+{{- if (and .Values.persistence.music.enabled (not .Values.persistence.music.existingClaim)) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "navidrome.fullname" . }}-music
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "navidrome.labels" . | nindent 4 }}
+spec:
+  accessModes:
+  {{- toYaml .Values.persistence.music.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.music.size }}
+    storageClassName: {{ .Values.persistence.music.storageClassName | quote }}
+{{- end }}
