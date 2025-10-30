@@ -10,7 +10,7 @@ spec:
     targetRevision: main
     path: charts/nextcloud      # 指向你自定义 Helm Chart 的路径
     helm:
-      releaseName: naxtcloud
+      releaseName: nextcloud
       parameters:
         - name: replicaCount
           value: "1"
