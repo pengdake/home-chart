@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextcloud
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/nextcloud      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: naxtcloud
+      parameters:
+        - name: replicaCount
+          value: "1"
+
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
