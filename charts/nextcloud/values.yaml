@@ -436,6 +436,7 @@ mariadb:
     defaultStorageClass: ""
 
   auth:
+    rootPassword: "abc123"
     database: nextcloud
     username: nextcloud
     password: abc123

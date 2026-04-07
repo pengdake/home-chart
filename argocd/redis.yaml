@@ -11,6 +11,9 @@ spec:
     path: charts/redis      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: redis
+      parameters:
+      - name: global.redis.password
+        value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
 
   destination:
     server: https://kubernetes.default.svc
