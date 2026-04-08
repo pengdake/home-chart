@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main
-    path: charts/prometheus      # 指向你自定义 Helm Chart 的路径
+    path: charts/kube-prometheus-stack      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: prometheus
 
