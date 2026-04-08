@@ -25,7 +25,7 @@ spec:
         - name: rfc2136.tsigSecretAlgorithm
           value: "HMAC-SHA256"
         - name: rfc2136.tsigKeyName
-          value: "externaldns
+          value: "externaldns"
         - name: policy
           value: "upsert-only"
         - name: txtOwnerId
