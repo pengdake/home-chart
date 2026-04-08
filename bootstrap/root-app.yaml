@@ -16,5 +16,5 @@ spec:
     namespace: default
   syncPolicy:
     automated:
-      prune: false   # 迁移阶段建议关闭
+      prune: true   # 迁移阶段建议关闭
       selfHeal: false
