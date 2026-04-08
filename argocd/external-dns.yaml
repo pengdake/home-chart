@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/external-dns      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: external-dns
+      parameters:
+        - name: provider
+          value: "rfc2136"
+        - name: rfc2136.host
+          value: "192.168.31.100"
+        - name: rfc2136.port
+          value: "53"
+        - name: rfc2136.zone
+          value: "pengdake.xyz"
+        - name: rfc2136.tsigSecretName
+          value: "QLErbZUtNtEsCk5a4ExIyP6uM1WgVqXc1FxRyCDGaS4="
+        - name: rfc2136.tsigSecretAlgorithm
+          value: "HMAC-SHA256"
+        - name: rfc2136.tsigKeyName
+          value: "externaldns
+        - name: policy
+          value: "upsert-only"
+        - name: txtOwnerId
+          value: "k3s" 
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
