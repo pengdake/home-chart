@@ -20,11 +20,11 @@ spec:
           value: "53"
         - name: rfc2136.zone
           value: "pengdake.xyz"
-        - name: rfc2136.tsigSecretName
+        - name: rfc2136.tsigSecret
           value: "QLErbZUtNtEsCk5a4ExIyP6uM1WgVqXc1FxRyCDGaS4="
-        - name: rfc2136.tsigSecretAlgorithm
-          value: "HMAC-SHA256"
-        - name: rfc2136.tsigKeyName
+        - name: rfc2136.tsigAlgorithm
+          value: "hmac-sha256"
+        - name: rfc2136.tsigKeyname
           value: "externaldns"
         - name: policy
           value: "upsert-only"
