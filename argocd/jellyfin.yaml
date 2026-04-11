@@ -19,7 +19,7 @@ spec:
         - name: persistence.media.storageClass
           value: "nfs-client"
         - name: persistence.media.size
-          value: "300Gi"
+          value: "600Gi"
         # 使用已有的persistent volume claim，注释掉上面关于persistence.media的参数，并取消下面的注释 
         # - name: persistence.media.existingClaim
         #  value: ""
