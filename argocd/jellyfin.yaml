@@ -11,7 +11,16 @@ spec:
     path: charts/jellyfin      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: jellyfin
-
+    parameters:
+      - name: persistence.enabled
+        value: "true"
+      - name: persistence.media.enabled
+        value: "true"
+      - name: persistence.media.storageClass
+        value: "nfs-client"
+      - name: persistence.media.size
+        value: "600Gi"
+        
   destination:
     server: https://kubernetes.default.svc
     namespace: default
