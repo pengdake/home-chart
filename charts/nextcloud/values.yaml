@@ -92,7 +92,7 @@ nextcloud:
   containerPort: 80
   datadir: /var/www/html/data
   persistence:
-    subPath: data
+    subPath:
   # if set, we'll template this list to the NEXTCLOUD_TRUSTED_DOMAINS env var
   trustedDomains: []
   ## SMTP configuration
@@ -213,15 +213,15 @@ nextcloud:
 
   # Extra config files created in /var/www/html/config/
   # ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#multiple-config-php-file
-  configs: 
-    logging.config.php: |-
-      <?php
-      $CONFIG = array (
-        'log_type' => 'file',
-        'logfile' => 'nextcloud.log',
-        'loglevel' => 0,
-        'logdateformat' => 'F d, Y H:i:s'
-        );
+  configs: {}
+  #  logging.config.php: |-
+  #    <?php
+  #    $CONFIG = array (
+  #      'log_type' => 'file',
+  #      'logfile' => 'nextcloud.log',
+  #      'loglevel' => 0,
+  #      'logdateformat' => 'F d, Y H:i:s'
+  #       );
   # For example, to enable image and text file previews:
   #  previews.config.php: |-
   #    <?php
@@ -710,7 +710,7 @@ service:
 ##
 persistence:
   # Nextcloud Data (/var/www/html)
-  enabled: true
+  enabled: false
   annotations: {}
   labels: {}
   ## nextcloud data Persistent Volume Storage Class
@@ -760,14 +760,14 @@ resources: {}
 ##
 livenessProbe:
   enabled: true
-  initialDelaySeconds: 120
+  initialDelaySeconds: 10
   periodSeconds: 10
   timeoutSeconds: 5
   failureThreshold: 3
   successThreshold: 1
 readinessProbe:
   enabled: true
-  initialDelaySeconds: 120
+  initialDelaySeconds: 10
   periodSeconds: 10
   timeoutSeconds: 5
   failureThreshold: 3

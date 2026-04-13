@@ -14,11 +14,11 @@ spec:
       parameters:
         - name: replicaCount
           value: "1"
-        - name: persistence.enabled
+        - name: persistence.nextcloudData.enabled
           value: "true"
-        - name: persistence.storageClass
+        - name: persistence.nextcloudData.storageClass
           value: "nfs-client"
-        - name: persistence.size
+        - name: persistence.nextcloudData.size
           value: "100Gi"
 
   destination:
