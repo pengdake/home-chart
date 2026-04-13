@@ -14,7 +14,12 @@ spec:
       parameters:
         - name: replicaCount
           value: "1"
-
+        - name: persistence.enabled
+          value: "true"
+        - name: persistence.storageClass
+          value: "nfs-client"
+        - name: persistence.size
+          value: "60Gi"
 
   destination:
     server: https://kubernetes.default.svc
