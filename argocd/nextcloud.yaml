@@ -22,6 +22,8 @@ spec:
           value: "nfs-client"
         - name: persistence.nextcloudData.size
           value: "100Gi"
+        - name: nextcloud.trustedDomains[0]
+          value: "*"
 
   destination:
     server: https://kubernetes.default.svc
