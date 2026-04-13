@@ -14,6 +14,8 @@ spec:
       parameters:
         - name: replicaCount
           value: "1"
+        - name: persistence.enabled
+          value: "true"
         - name: persistence.nextcloudData.enabled
           value: "true"
         - name: persistence.nextcloudData.storageClass
