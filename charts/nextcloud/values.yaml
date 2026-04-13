@@ -215,13 +215,13 @@ nextcloud:
   # ref: https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#multiple-config-php-file
   configs: 
     logging.config.php: |-
-    <?php
-    $CONFIG = array (
-      'log_type' => 'file',
-      'logfile' => 'nextcloud.log',
-      'loglevel' => 0,
-      'logdateformat' => 'F d, Y H:i:s'
-      );
+      <?php
+      $CONFIG = array (
+        'log_type' => 'file',
+        'logfile' => 'nextcloud.log',
+        'loglevel' => 0,
+        'logdateformat' => 'F d, Y H:i:s'
+        );
   # For example, to enable image and text file previews:
   #  previews.config.php: |-
   #    <?php
