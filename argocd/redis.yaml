@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/redis      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: redis
+      parameters:
+      - name: global.redis.password
+        value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
