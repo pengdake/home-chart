@@ -200,4 +200,20 @@ env:
     value: "true"
   - name: ND_PROMETHEUS_METRICSPATH
     value: "/metrics"
+  - name: ND_LASTFM_APIKEY
+    valueFrom:
+      secretKeyRef:
+        name: {{ .Values.secretName }}
+        key: lastfm_apikey
+  - name: ND_LASTFM_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: {{ .Values.secretName }}
+        key: lastfm_secret
+
+secretName: navidrome-secret
+
+lastfm:
+  encryptedApikey: AgBylPrCsVDBWYa8oCI+DHpb08FaNF6yEgXCpadaC4mYdasOYOC1E0Gkl7M8SByYC7kWufBAP5CWUnOHhXBbkOF2ZtZJxMZufAKSytAZGhmu3TvfPyv/01Je6A7C2vfMBNa+KVv1HImNDXsgIXpsRIeppSKAl2td3pWU5lo2nC1NeRKYtLnfnllu04aqPC6WfZ4C399zNg31gXaI6hjjGzJxmYxcVPbawHHHv0mMQhdnSiMRCgoe9h2alOehuhpOewyoqWmSWDVMT8CS5B6TMdnCmsgCoxDrud2qbeL5a8XhtEBUSQnFiyqPk9oONHeAW+NVX4VBoirXA8a2O4vIXmYo3atbme5B6ktkriJHux4A2o6yDz2/L68+6hBYhfOpI8Jw5ycCuSUdxL9EbwgPjBrEs7S/UgMLQlGp16QLrMB5Xv9iur4qj7VGAtnW8yCzi8v2bM23VGpnRgH0JgJH4w9rqDTkue5pVLqOyEJaPN4kvlrB0cLylS6jY6ccCfLWQ0rDpsWDe3i+jdhnVW7cLDOFEGIP6jui95d1gntPik/vLKufvuZovAoyJWrpraKcgER4fzcE1XSUr8oKOzJ+MwA25QgmbgBUz8NzEv0P3dzqTRARV/V7zueeGPDSijauy3Ein+FQd0//LnrrVaVwa4HoaE7HtEy5oEpiUv+ni2zmX6PfAnFESidXqEXh236Mm2hJptasmQRPgRe3Vn+Zk4EHlnyHUXbyMHo=
+  encryptedSecret: AgB+7mm3GDeQ5rtXIyrzA89w3h+BjAHveXy4rAyvTdcFwuajzLxOnV8DCoJQvliRCA3DB9KdTxMEQxaxvff5atVCqWlSPTWBW/DOabHhPAELK4SNHOMFjYP2ZelkY5P8XQ+vS21RtNGHWuLkPmnbx7vX4QsfpQwnazT5hVu+KAAyCb5oKH7XmUQNnayhIS36+OrhTksa8nr1GV+SvSdFhnkzkFKnf6tv7FPWFhsnjsV8vTiZjDzW0opWdOaXbizHVjrtOVdgx2uoKcpr8oirFim0B6Cieg18IkUjUvSybBxGGvc46O6eOH35sA3Poidt+xZ/4L86Ly0x+Qd/2Vg3SIAhk2CbiNggEIGBSWr1RApI9edl6sIzkC4oOLSFivn5UUam0uKpp7sV/L34EjDpSbXkcZJQsSlqE6O9BBB/M87OAyIYP+ogbTP5Be5RxCZtLg1u7ModpavWWuLsSGOQCw4BX3oSAdFLVasGFTRDfhxFxu7fTJqHjhmH/31tQP+kPtvXIB2PRPJVk5rUHx/RuGpFRSdcNHsxDybxH+uMDvqTo1CSumSJ82VGLdNjcFU3hY8pi8JLbg82gJAE7cW+YeektZdzm5jF1e35VVRORhQSyQ9yJ4VbBWRJFsaXKzX/xrp2RFX1Agq6uquqhPNfG4Jk/ncDUZOqZu5MGM3vPg51YWwgCU/PKGUY22ZHGp9MuZ5aPv0Nkmq8LeC2nZKLv9tsVwTkpxXC48c=
 
