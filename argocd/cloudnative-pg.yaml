@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cloudnative-pg
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/cloudnative-pg      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: cloudnative-pg
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
