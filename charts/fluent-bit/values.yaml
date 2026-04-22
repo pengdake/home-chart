@@ -417,22 +417,7 @@ config:
         Keep_Log Off
         K8S-Logging.Parser On
         K8S-Logging.Exclude On
-    
-    [FILTER]
-        Name nest
-        Match kube.*
-        Operation lift
-        Nested_under record
-        Add_prefix log_
-    
-    [FILTER]
-        Name nest
-        Match kube.*
-        Operation lift
-        Nested_under log_level
-        wildcard name
-        Add_prefix log_level_
-    
+          
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
