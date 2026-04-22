@@ -417,7 +417,10 @@ config:
         Keep_Log Off
         K8S-Logging.Parser On
         K8S-Logging.Exclude On
-
+    
+    [FILTER]
+        Name modify
+        Rename record.level.name level
 
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
