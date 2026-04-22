@@ -420,6 +420,7 @@ config:
     
     [FILTER]
         Name modify
+        Match kube.*
         Rename record.level.name level
 
   ## https://docs.fluentbit.io/manual/pipeline/outputs
