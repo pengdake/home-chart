@@ -426,10 +426,16 @@ config:
         Add_prefix log_
 
     [FILTER]
-        Name record_modifier
+        Name nest
         Match kube.*
-        Record level ${log_level["name"]}
-        Remove_key log_level
+        Operation lift
+        Nested_under log_level
+        Add_prefix log_level_
+
+    [FILTER]
+        Name modify
+        Match kube.*
+        Rename log_level_name level
 
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
