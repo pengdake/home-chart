@@ -418,6 +418,20 @@ config:
         K8S-Logging.Parser On
         K8S-Logging.Exclude On
           
+    
+    [FILTER]
+        Name nest
+        Match kube.*
+        Operation lift
+        Nested_under record
+        Add_prefix log_
+    
+    [FILTER]
+        Name record_modifier
+        Match kube.*
+        Record level ${log_level["name"]}
+        Remove_key log_level
+    
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
