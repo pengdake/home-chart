@@ -23,3 +23,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+      
+  syncOptions:
+    - CreateNamespace=true  # 如果 cert-manager 命名空间不存在，自动创建
