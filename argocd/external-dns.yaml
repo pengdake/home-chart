@@ -12,6 +12,12 @@ spec:
     helm:
       releaseName: external-dns
       parameters:
+        - name: image.registry
+          value: "registry.k8s.io"
+        - name: image.repository
+          value: "external-dns/external-dns"
+        - name: image.tag
+          value: "v0.18.0"
         - name: provider
           value: "rfc2136"
         - name: rfc2136.host
