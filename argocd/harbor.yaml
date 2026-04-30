@@ -42,8 +42,6 @@ spec:
         value: "redis.default.svc.cluster.local:6379"
       - name: redis.external.password
         value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
-      - name: trivy.image.repository
-        value: "harbor.pengdake.xyz/proxy-cache/goharbor/trivy-adapter-photon"
 
   destination:
     server: https://kubernetes.default.svc
