@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: external-dns
       parameters:
+        - name: global.security.allowInsecureImages
+          value: "true"
         - name: image.registry
           value: "registry.k8s.io"
         - name: image.repository
