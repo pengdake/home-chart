@@ -42,6 +42,8 @@ spec:
         value: "yX1GEbvyGRT3O6kW7Qhx8Wiznc4OFE2kKSuufJqbgDugXwi4c4tCaCkzUvKIsw2x"
       - name: redis.type
         value: "external"
+      - name: redis.external.sentinelMasterSet
+        value: "mymaster"
       - name: redis.external.addr
         value: "redis-node-0.redis-headless.default.svc.cluster.local:26379,redis-node-1.redis-headless.default.svc.cluster.local:26379,redis-node-2.redis-headless.default.svc.cluster.local:26379"
       - name: redis.external.password
