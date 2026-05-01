@@ -17,7 +17,7 @@ spec:
       - name: expose.tls.enabled
         value: "false"
       - name: expose.ingress.hosts.core
-        value: "http://harbor.pengdake.xyz"
+        value: "harbor.pengdake.xyz"
       - name: expose.externalURL
         value: "harbor.pengdake.xyz"
       - name: persistence.persistenceVolumeClaim.registry.size
