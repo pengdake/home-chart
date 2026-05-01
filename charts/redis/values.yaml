@@ -147,7 +147,7 @@ auth:
   enabled: true
   ## @param auth.sentinel Enable authentication on sentinels too
   ##
-  sentinel: true
+  sentinel: false
   ## @param auth.password Redis(R) password
   ## Defaults to a random 10-character alphanumeric string if not set
   ##
