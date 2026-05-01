@@ -43,8 +43,10 @@ spec:
       - name: redis.type
         value: "external"
       - name: redis.external.addr
-        value: "redis.default.svc.cluster.local:6379"
+        value: "redis.default.svc.cluster.local:26379"
       - name: redis.external.password
+        value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
+      - name: harborAdminPassword
         value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
 
   destination:
