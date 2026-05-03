@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: harbor
       parameters:
+      - name: updateStrategy.type
+        value: "Recreate"
       - name: expose.type
         value: "ingress"
       - name: expose.tls.enabled
