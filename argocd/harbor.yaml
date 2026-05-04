@@ -17,7 +17,7 @@ spec:
       - name: expose.type
         value: "ingress"
       - name: expose.tls.enabled
-        value: "false"
+        value: "true"
       - name: expose.ingress.hosts.core
         value: "harbor.pengdake.xyz"
       - name: expose.externalURL
