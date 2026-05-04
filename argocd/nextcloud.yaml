@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: nextcloud
       parameters:
+        - name: image.repository
+          value: "harbor.pengdake.xyz/proxy-cache/library/nextcloud"
         - name: replicaCount
           value: "1"
         - name: persistence.enabled
