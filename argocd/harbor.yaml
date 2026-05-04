@@ -22,8 +22,6 @@ spec:
         value: "harbor.pengdake.xyz"
       - name: expose.externalURL
         value: "harbor.pengdake.xyz"
-      - name: expose.ingress.annotations."external-dns.alpha.kubernetes.io/target"
-        value: "192.168.31.94,192.168.31.95,192.168.31.96,192.168.31.98"
       - name: persistence.persistenceVolumeClaim.registry.size
         value: "30Gi"
       - name: proxy.httpProxy
