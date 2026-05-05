@@ -13,19 +13,19 @@ spec:
       releaseName: minio
       parameters:
       - name: replicas
-        value: 4
+        value: "4"
       - name: size
-        value: 100Gi
+        value: "100Gi"
       - name: ingress.enabled
-        value: true
+        value: "true"
       - name: consoleIngress.enabled
-        value: true
+        value: "true"
       - name: rootUser
-        value: admin
+        value: "admin"
       - name: rootPassword
-        value: abc123
+        value: "abc123"
       - name: metrics.enabled
-        value: true
+        value: "true"
 
   destination:
     server: https://kubernetes.default.svc
