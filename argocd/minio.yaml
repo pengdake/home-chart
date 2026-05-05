@@ -26,6 +26,8 @@ spec:
         value: "abc123"
       - name: metrics.enabled
         value: "true"
+      - name: resources.requests.memory
+        value: "4Gi"
 
   destination:
     server: https://kubernetes.default.svc
