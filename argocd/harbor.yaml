@@ -19,7 +19,7 @@ spec:
       - name: expose.tls.enabled
         value: "true"
       - name: expose.tls.certSource
-        value: "none"
+        value: "secret"
       - name: expose.tls.secret.secretName
         value: "harbor-ingress"
       - name: expose.ingress.hosts.core
