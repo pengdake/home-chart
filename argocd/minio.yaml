@@ -14,8 +14,6 @@ spec:
       parameters:
       - name: replicas
         value: "4"
-      - name: persistence.storageClass
-        value: "local-path"
       - name: persistence.size
         value: "60Gi"
       - name: ingress.enabled
