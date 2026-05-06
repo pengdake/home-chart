@@ -17,7 +17,7 @@ spec:
       - name: persistence.storageClass
         value: "local-path"
       - name: persistence.size
-        value: "100Gi"
+        value: "60Gi"
       - name: ingress.enabled
         value: "true"
       - name: consoleIngress.enabled
