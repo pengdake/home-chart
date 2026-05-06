@@ -24,8 +24,6 @@ spec:
         value: "harbor.pengdake.xyz"
       - name: expose.externalURL
         value: "harbor.pengdake.xyz"
-      - name: persistence.persistenceVolumeClaim.registry.size
-        value: "30Gi"
       - name: proxy.httpProxy
         value: "http://192.168.31.90:7890"
       - name: proxy.httpsProxy
@@ -52,7 +50,19 @@ spec:
         value: "redis-node-0.redis-headless.default.svc.cluster.local:26379,redis-node-1.redis-headless.default.svc.cluster.local:26379,redis-node-2.redis-headless.default.svc.cluster.local:26379"
       - name: redis.external.password
         value: "abc123" # 生产环境建议使用 Argo CD Secrets 或 Values 文件
-
+      - name: persistence.imageChartStorage.disableredirect
+        value: "true"
+      - name: persistence.imageChartStorage.type
+        value: "s3"
+      - name: persistence.imageChartStorage.s3.bucket
+        value: "harbor"
+      - name: persistence.imageChartStorage.s3.accesskey
+        value: "harbor"
+      - name: persistence.imageChartStorage.s3.secretkey
+        value: "Harbor12345"
+      - name: persistence.imageChartStorage.s3.regionendpoint
+        value: "http://minio.minio.svc.cluster.local:9000"
+      
   destination:
     server: https://kubernetes.default.svc
     namespace: default
