@@ -20,7 +20,7 @@ spec:
         value: "true"
       - name: consoleIngress.enabled
         value: "true"
-      - name: metrics.enabled
+      - name: metrics.serviceMonitor.enabled
         value: "true"
       - name: resources.requests.memory
         value: "4Gi"
