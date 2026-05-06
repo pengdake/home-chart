@@ -14,7 +14,7 @@ spec:
       parameters:
       - name: replicas
         value: "4"
-      - name: size
+      - name: persistence.size
         value: "100Gi"
       - name: ingress.enabled
         value: "true"
