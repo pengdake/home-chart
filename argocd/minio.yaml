@@ -20,10 +20,6 @@ spec:
         value: "true"
       - name: consoleIngress.enabled
         value: "true"
-      - name: rootUser
-        value: "admin"
-      - name: rootPassword
-        value: "abc123"
       - name: metrics.enabled
         value: "true"
       - name: resources.requests.memory
