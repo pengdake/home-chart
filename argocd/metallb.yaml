@@ -14,8 +14,6 @@ spec:
       parameters:
       - name: prometheus.namespace
         value: "default"
-      - name: prometheus.podMonitor.enabled
-        value: "true"
       - name: prometheus.serviceMonitor.enabled
         value: "true"
 
