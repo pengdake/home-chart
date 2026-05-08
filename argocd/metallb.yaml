@@ -15,7 +15,7 @@ spec:
       - name: prometheus.namespace
         value: "default"
       - name: prometheus.serviceMonitor.enabled
-        value: "true"
+        value: "false"
 
   destination:
     server: https://kubernetes.default.svc
