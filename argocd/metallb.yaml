@@ -1,28 +1,31 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cert-manager
+  name: metallb
   namespace: argocd    # 必须是 argocd 命名空间
 spec:
   project: default
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main
-    path: charts/cert-manager      # 指向你自定义 Helm Chart 的路径
+    path: charts/metallb      # 指向你自定义 Helm Chart 的路径
     helm:
-      releaseName: cert-manager
+      releaseName: metallb
       parameters:
-      - name: global.crds.enabled
+      - name: prometheus.namespace
+        value: "default"
+      - name: prometheus.podMonitor.enabled
+        value: "true"
+      - name: prometheus.serviceMonitor.enabled
         value: "true"
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: cert-manager
+    namespace: metallb-system
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
     syncOptions:
-      - CreateNamespace=true  # 如果 cert-manager 命名空间不存在，自动创建
+      - CreateNamespace=true
