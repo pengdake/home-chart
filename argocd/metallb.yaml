@@ -16,6 +16,8 @@ spec:
         value: "default"
       - name: prometheus.serviceMonitor.enabled
         value: "false"
+      - name: speaker.frr.enabled
+        value: "false"
 
   destination:
     server: https://kubernetes.default.svc
