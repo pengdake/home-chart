@@ -101,13 +101,15 @@ ingress:
   #      - chart-example.local
 
 # -- Resource requests and limits for the Jellyfin container.
-resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+resources:
+  limits:
+    cpu: 1
+    memory: 1Gi
+    gpu.intel.com/i915: 1
+  requests:
+    cpu: 300m
+    memory: 512Mi
+    gpu.intel.com/i915: 1
 
 # -- Configure liveness probe for Jellyfin.
 livenessProbe:
@@ -130,17 +132,17 @@ readinessProbe:
   # periodSeconds: 10
 
 # -- Additional volumes to mount in the Jellyfin pod.
-volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
+volumes:
+  - name: intel-gpu
+    hostPath:
+      path: /dev/dri
+      type: Directory
+
 
 # -- Additional volume mounts for the Jellyfin container.
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
+volumeMounts:
+  - name: intel-gpu
+    mountPath: "/dev/dri"
 
 # -- Node selector for pod scheduling.
 nodeSelector: {}
