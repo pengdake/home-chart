@@ -5,6 +5,11 @@ metadata:
   namespace: argocd    # 必须是 argocd 命名空间
 spec:
   project: default
+  ignoreDifferences:
+    - group: postgresql.cnpg.io
+      kind: Cluster
+      managedFieldsManagers:
+        - cloudnative-pg
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main
