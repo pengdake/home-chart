@@ -8,8 +8,7 @@ spec:
   ignoreDifferences:
     - group: postgresql.cnpg.io
       kind: Cluster
-      managedFieldsManagers:
-        - cloudnative-pg
+      josnPointers: /spec/managed/services/additional
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main

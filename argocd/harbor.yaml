@@ -11,6 +11,19 @@ spec:
     path: charts/harbor      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: harbor
+      ignoreDifferences:
+      - kind: Secret
+        jsonPointers:
+        # harbor-core
+        - /data/secret
+        - /data/CSRF_KEY
+        # registry-secret
+        - /data/REGISTRY_HTTP_SECRET 
+        # jobservice-secret 
+        - /data/JOBSERVICE_SECRET
+        - /data/ca.crt
+        - /data/tls.crt
+        - /data/tls.key
       parameters:
       - name: updateStrategy.type
         value: "Recreate"
