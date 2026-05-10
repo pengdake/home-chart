@@ -23,6 +23,8 @@ spec:
     helm:
       releaseName: harbor
       parameters:
+      - name: caSecretName
+        value: "harbor-ingress"
       - name: updateStrategy.type
         value: "Recreate"
       - name: expose.type
