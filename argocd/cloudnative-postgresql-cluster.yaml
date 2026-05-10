@@ -3,12 +3,10 @@ kind: Application
 metadata:
   name: cloudnative-postgresql-cluster
   namespace: argocd    # 必须是 argocd 命名空间
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true
 spec:
   project: default
-  ignoreDifferences:
-    - group: postgresql.cnpg.io
-      kind: Cluster
-      josnPointers: /spec/managed/services/additional
   source:
     repoURL: https://github.com/pengdake/home-chart.git
     targetRevision: main
