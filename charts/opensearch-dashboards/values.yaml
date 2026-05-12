@@ -176,12 +176,12 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   labels: {}
   hosts:
-    - host: chart-example.local
+    - host: opensearch-dashboards.pengdake.xyz
       paths:
         - path: /
           backend:
-            serviceName: ""
-            servicePort: ""
+            serviceName: opensearch-dashboards
+            servicePort: 5601
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

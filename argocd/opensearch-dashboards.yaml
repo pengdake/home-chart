@@ -11,6 +11,9 @@ spec:
     path: charts/opensearch-dashboards      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: opensearch-dashboards
+      parameters:
+      - name: ingress.enabled
+        value: true
 
   destination:
     server: https://kubernetes.default.svc
