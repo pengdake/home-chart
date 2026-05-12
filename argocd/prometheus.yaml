@@ -11,6 +11,14 @@ spec:
     path: charts/kube-prometheus-stack      # 指向你自定义 Helm Chart 的路径
     helm:
       releaseName: prometheus
+      parameters:
+      - name: alertmanager.ingress.enabled
+        value: "true"
+      - name: grafana.ingress.enabled
+        value: "true"
+      - name: prometheus.ingress.enabled
+        value: "true"
+
 
   destination:
     server: https://kubernetes.default.svc
