@@ -182,7 +182,7 @@ affinity: {}
 persistence:
   data:
     enabled: true
-    existingClaim: navidrome-data          # 有现成PVC就填它的名字，否则留空自动创建
+    existingClaim:          # 有现成PVC就填它的名字，否则留空自动创建
     storageClassName: nfs-client
     accessModes:
       - ReadWriteMany
