@@ -12,5 +12,5 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.music.size }}
-    storageClassName: {{ .Values.persistence.music.storageClassName | quote }}
+  storageClassName: {{ .Values.persistence.music.storageClassName | quote }}
 {{- end }}
