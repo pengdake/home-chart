@@ -200,6 +200,13 @@ env:
     value: "true"
   - name: ND_PROMETHEUS_METRICSPATH
     value: "/metrics"
+  - name: ND_LOG_LEVEL
+    value: "debug"
+  - name: ND_TRANSCODINGCACHESIZE
+    value: "300MB"
+  - name: ND_IMAGECACHESIZE
+    value: "300MB"
+  
 
 secretName: navidrome-secret
 
