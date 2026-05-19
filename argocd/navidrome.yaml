@@ -13,7 +13,9 @@ spec:
       releaseName: navidrome
       parameters:
         - name: replicaCount
-          value: "1"
+          value: "3"
+        - name: image.repository
+          value: "harbor.pengdake.xyz/proxy-cache/deluan/navidrome"
         - name: image.tag
           value: "latest"
 
