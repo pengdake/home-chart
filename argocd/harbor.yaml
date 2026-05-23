@@ -77,6 +77,10 @@ spec:
         value: "Harbor12345"
       - name: persistence.imageChartStorage.s3.regionendpoint
         value: "http://minio.minio.svc.cluster.local:9000"
+      - name: core.image.repository
+        value: "192.168.31.92:5000/goharbor/harbor-core"
+      - name: jobservice.image.repository
+        value: "192.168.31.92:5000/goharbor/harbor-jobservice"
       
   destination:
     server: https://kubernetes.default.svc
