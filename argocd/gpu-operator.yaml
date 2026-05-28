@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gpu-operator
+  namespace: argocd    # 必须是 argocd 命名空间
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pengdake/home-chart.git
+    targetRevision: main
+    path: charts/gpu-operator      # 指向你自定义 Helm Chart 的路径
+    helm:
+      releaseName: gpu-operator
+      parameters:
+      - name: driver.version
+        value: "v26.3.0"
+
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gpu-operator
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
