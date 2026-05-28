@@ -10,7 +10,6 @@ spec:
     targetRevision: main
     path: charts/gpu-operator      # 指向你自定义 Helm Chart 的路径
     helm:
-      version: "v26.3.0"
       releaseName: gpu-operator
 
   destination:
