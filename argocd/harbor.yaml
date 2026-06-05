@@ -81,6 +81,16 @@ spec:
         value: "192.168.31.92:5000/goharbor/harbor-core"
       - name: jobservice.image.repository
         value: "192.168.31.92:5000/goharbor/harbor-jobservice"
+      - name: portal.image.repository
+        value: "192.168.31.92:5000/goharbor/harbor-portal"
+      - name: registry.image.repository
+        value: "192.168.31.92:5000/goharbor/registry-photon"
+      - name: registry.image.controller
+        value: "192.168.31.92:5000/goharbor/harbor-registryctl"
+      - name: trivy.image.repository
+        value: "192.168.31.92:5000/goharbor/trivy-adapter-photon"
+      - name: export.image.repository
+        value: "192.168.31.92:5000/goharbor/harbor-exporter"
       
   destination:
     server: https://kubernetes.default.svc
