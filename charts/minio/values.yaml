@@ -212,7 +212,7 @@ ingress:
     # nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
   path: /
   hosts:
-    - minio.pengdake.xyz
+    - minio.pengdake.top
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -253,7 +253,7 @@ consoleIngress:
     # nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
   path: /
   hosts:
-    - console.minio.pengdake.xyz
+    - console.minio.pengdake.top
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

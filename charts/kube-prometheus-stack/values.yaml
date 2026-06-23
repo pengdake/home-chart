@@ -609,7 +609,7 @@ alertmanager:
     ## Hosts must be provided if Ingress is enabled.
     ##
     hosts:
-      - alertmanager.pengdake.xyz
+      - alertmanager.pengdake.top
 
     ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
     ##
@@ -1329,7 +1329,7 @@ grafana:
     ## Must be provided if Ingress is enable.
     ##
     hosts:
-      - grafana.pengdake.xyz
+      - grafana.pengdake.top
     #hosts: []
 
     ## Path for grafana ingress
@@ -3718,7 +3718,7 @@ prometheus:
     ## Must be provided if Ingress is enabled.
     ##
     hosts:
-      - prometheus.pengdake.xyz
+      - prometheus.pengdake.top
     #hosts: []
 
     ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix

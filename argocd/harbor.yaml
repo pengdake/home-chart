@@ -36,9 +36,9 @@ spec:
       - name: expose.tls.secret.secretName
         value: "harbor-ingress"
       - name: expose.ingress.hosts.core
-        value: "harbor.pengdake.xyz"
+        value: "harbor.pengdake.top"
       - name: expose.externalURL
-        value: "harbor.pengdake.xyz"
+        value: "harbor.pengdake.top"
       - name: proxy.httpProxy
         value: "http://192.168.31.90:7890"
       - name: proxy.httpsProxy

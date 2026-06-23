@@ -176,7 +176,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   labels: {}
   hosts:
-    - host: opensearch-dashboards.pengdake.xyz
+    - host: opensearch-dashboards.pengdake.top
       paths:
         - path: /
           backend:
