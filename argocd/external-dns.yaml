@@ -27,7 +27,7 @@ spec:
         - name: rfc2136.port
           value: "53"
         - name: rfc2136.zone
-          value: "pengdake.xyz"
+          value: "pengdake.top"
         - name: rfc2136.tsigSecret
           value: "QLErbZUtNtEsCk5a4ExIyP6uM1WgVqXc1FxRyCDGaS4="
         - name: rfc2136.tsigAlgorithm
