@@ -91,6 +91,8 @@ spec:
         value: "192.168.31.92:5000/goharbor/trivy-adapter-photon"
       - name: export.image.repository
         value: "192.168.31.92:5000/goharbor/harbor-exporter"
+      - name: logLevel
+        value: "debug"
       
   destination:
     server: https://kubernetes.default.svc
