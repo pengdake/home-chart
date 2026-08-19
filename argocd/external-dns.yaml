@@ -23,7 +23,7 @@ spec:
         - name: provider
           value: "rfc2136"
         - name: rfc2136.host
-          value: "192.168.31.100"
+          value: "192.168.31.99"
         - name: rfc2136.port
           value: "53"
         - name: rfc2136.zone
