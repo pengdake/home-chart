@@ -25,7 +25,7 @@ spec:
         - name: rfc2136.host
           value: "192.168.31.99"
         - name: rfc2136.port
-          value: "30053"
+          value: "53"
         - name: rfc2136.zone
           value: "pengdake.top"
         - name: rfc2136.tsigSecret
